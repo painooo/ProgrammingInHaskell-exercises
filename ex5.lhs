@@ -63,14 +63,16 @@ Kinda infuriating that I can't figure out how to define a var to factors x
 > chr2int c = ord c - ord 'a'
 > int2chr :: Int -> Char
 > int2chr n = chr (ord 'a' + n)
+> inRange :: Int -> Bool
+> inRange chrnum = chrnum >= chr2int 'a' && chrnum <= chr2int 'z' 
 > lower :: Char -> Char
 > lower c 
->       | chrnum >= chr2int 'a' && chrnum <= chr2int 'z' = int2chr chrnum
+>       | inRange chrnum = int2chr chrnum
 >       | otherwise = c
 >       where chrnum = chr2int c + 32
 > upper :: Char -> Char
 > upper c 
->       | lower c == c = int2chr ((-32)+chr2int c)
+>       | inRange (chr2int c) = int2chr ((-32)+chr2int c)
 >       | otherwise = c
 > shift :: Int -> Char -> Char
 > shift n c = int2chr (mod (chr2int c + n) 26)
