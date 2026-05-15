@@ -17,7 +17,7 @@ Exercises #5
 3. w/ list comprehension define square :: Int -> [(Int,Int)] which returns coords of a square excluding 0,0 and (n,n)
 
 > square :: Int -> [(Int, Int)]
-> square n = [(x,y) | (x,y) <- grid n n, x /= y, (x, y) /= (0,0), (x,y) /= (n,n)]
+> square n = [(x,y) | (x,y) <- grid n n, x /= y]
 
 4. define replicate' :: Int :: a -> [a] w/ list comprehension
 
