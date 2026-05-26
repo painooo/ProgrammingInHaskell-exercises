@@ -1,4 +1,4 @@
-{- I used with exercise 9 -}
+{- Associated with exercise 9 -}
 
 data Op = Add | Sub | Mult | Div
 instance Show Op where 
